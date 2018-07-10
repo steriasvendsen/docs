@@ -36,6 +36,7 @@ Forklaring til parameterne i url:
  DelegationContext | tekst                                                   | Obligatorisk         | Beskrivelse fra datakonsument på hva som er formålet med samtykket. *Det kan hende at det finnes føringer fra datakilde på utformingen av denne teksten. Sjekk med datakilde.*
  ResponseType      | code                                                    |  Obligatorisk        | Vil alltid være «code». Angir at man skal ha en autorisasjonskode i retur som skal benyttes for å hente token
  Metadata          | tjenestekode_tjenesteutgavekode<br>_parameternavn=verdi | Valgfri              | For å gi ekstra metadata kan det defineres en eller flere samtykkeparameter som generelt er valgfri men kan påtvinges av utformingen av samtykketeksten som er definert av datakilde (eks. 4629_2_inntektsaar=2016)
+ UserToken         | tekst, 32 bokstavs hexadecimal, sha256                  | Valgfri              | Angir en hash av SSN for den sluttbrukeren som kan gi samtykke. Om UserToken er oppgitt vil sluttbruker bli omdirigert til innloggingssiden om ikke riktig sluttbruker er logget inn. Hashen som brukes er en Sha-256 hash av brukerens personnummer, uten mellomrom. Se Altinns [referanse-implementasjon](../referanse-implementasjon/).
 
 
 I figuren nedenfor kan man se sammenhengen mellom det som ligger i url og det som presenteres for sluttbrukeren på samtykkesiden.  
